@@ -23,6 +23,7 @@ In your DTOs, decorate the properties that you want to be hash with one of the:
 - HashidsNullableIntJsonConverterAttribute
 - HashidsLongJsonConverterAttribute
 - HashidsNullableLongJsonConverterAttribute
+> Only for System.Text.Json
 
 ```csharp
 public class SampleModel
@@ -53,7 +54,6 @@ public ActionResult<SampleModel> DecodeFromBody(SampleModel request)
     return this.Ok(request);
 }
 ```
-
 For hash the parameters of a route, query, or form-data, use the `HashidsBinderAttribute`
 ```csharp
  [HttpGet("decode/{id}")]
