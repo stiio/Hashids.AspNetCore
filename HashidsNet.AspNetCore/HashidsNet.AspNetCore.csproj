@@ -16,8 +16,8 @@
 
   <ItemGroup>
     <Folder Include="Binder\" />
+    <Folder Include="Json\SystemText\" />
     <Folder Include="Options\" />
-    <Folder Include="Json\" />
     <Folder Include="Attributes\" />
     <Folder Include="Swashbuckle\" />
   </ItemGroup>

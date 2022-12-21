@@ -2,6 +2,7 @@
 using HashidsNet.AspNetCore.Attributes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Sample.Models;
 
 namespace Sample.Controllers;
 
@@ -34,5 +35,11 @@ public class SampleController : ControllerBase
     public IActionResult Decode([Hashids] long id)
     {
         return this.Ok(id);
+    }
+
+    [HttpPost("model")]
+    public IActionResult DecodeModel(SampleModel request)
+    {
+        return this.Ok(request);
     }
 }

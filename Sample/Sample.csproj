@@ -11,11 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Hashids.Binder\HashidsNet.AspNetCore.csproj" />
+    <ProjectReference Include="..\HashidsNet.AspNetCore\HashidsNet.AspNetCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Models\" />
   </ItemGroup>
 
 </Project>
