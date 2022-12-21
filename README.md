@@ -4,6 +4,7 @@ Auto decode and encode hash ids for your api.
 
 ## Getting started
 1. Install package:  
+
 From PM console:
 ```
 Install-Package Stio.Hashids.AspNetCore
