@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace HashidsNet.AspNetCore.Binder;
 
@@ -33,19 +34,26 @@ internal class HashidsModelBinder : IModelBinder
             return Task.CompletedTask;
         }
 
-        if (bindingContext.ModelType == typeof(int))
+        try
         {
-            var result = this.hashids.DecodeSingle(value);
-            bindingContext.Result = ModelBindingResult.Success(result);
+            if (bindingContext.ModelType == typeof(int) || bindingContext.ModelType == typeof(int?))
+            {
+                var result = this.hashids.DecodeSingle(value);
+                bindingContext.Result = ModelBindingResult.Success(result);
+            }
+            else if (bindingContext.ModelType == typeof(long) || bindingContext.ModelType == typeof(long?))
+            {
+                var result = this.hashids.DecodeSingleLong(value);
+                bindingContext.Result = ModelBindingResult.Success(result);
+            }
+            else
+            {
+                throw new ArgumentException("Invalid target hashids type. Must be long, long?, int or int?.", nameof(bindingContext.ModelType.Name));
+            }
         }
-        else if (bindingContext.ModelType == typeof(long))
+        catch (NoResultException)
         {
-            var result = this.hashids.DecodeSingleLong(value);
-            bindingContext.Result = ModelBindingResult.Success(result);
-        }
-        else
-        {
-            throw new ArgumentException("Invalid hashids type", nameof(bindingContext.ModelType.Name));
+            bindingContext.ModelState.TryAddModelError(modelName, "Invalid hash.");
         }
 
         return Task.CompletedTask;

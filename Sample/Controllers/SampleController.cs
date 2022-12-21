@@ -37,6 +37,12 @@ public class SampleController : ControllerBase
         return this.Ok(id);
     }
 
+    [HttpGet("decode/nullable_query")]
+    public IActionResult DecodeNullableQuery([HashidsBinder] int? id)
+    {
+        return this.Ok(id);
+    }
+
     [HttpPost("decode/form")]
     public IActionResult DecodeFromForm([FromForm, HashidsBinder] long id)
     {
@@ -50,7 +56,7 @@ public class SampleController : ControllerBase
     }
 
     [HttpPost("model")]
-    public IActionResult DecodeFromBody(SampleModel request)
+    public ActionResult<SampleModel> DecodeFromBody(SampleModel request)
     {
         return this.Ok(request);
     }

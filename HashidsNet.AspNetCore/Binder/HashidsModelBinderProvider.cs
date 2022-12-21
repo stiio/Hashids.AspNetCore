@@ -14,8 +14,6 @@ internal class HashidsModelBinderProvider : IModelBinderProvider
             throw new ArgumentNullException(nameof(context));
         }
 
-        // TODO: Review
-        // TODO: Add form data support ? (parameter and complex object)
         if (context.Metadata is not DefaultModelMetadata defaultModelMetadata)
         {
             return null;
