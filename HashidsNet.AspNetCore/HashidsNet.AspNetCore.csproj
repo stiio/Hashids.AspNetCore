@@ -15,7 +15,7 @@
 	<RepositoryUrl>https://github.com/stiio/Hashids.AspNetCore</RepositoryUrl>
 	<RepositoryType>git</RepositoryType>
 	<PackageTags>ids;hash</PackageTags>
-	<PackageLicenseFile>LICENSE</PackageLicenseFile>
+	<PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -38,7 +38,7 @@
   </ItemGroup>
 
 	<ItemGroup>
-		<None Include="..\LICENSE">
+		<None Include="..\LICENSE.txt">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
