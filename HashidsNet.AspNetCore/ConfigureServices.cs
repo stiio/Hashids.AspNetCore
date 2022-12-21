@@ -15,5 +15,6 @@ public static class ConfigureServices
         services.AddSingleton<IHashids>(_ => new Hashids(salt, minHashLength, alphabet, seps));
 
         services.ConfigureOptions<ConfigureSystemTextJsonOptions>();
+        services.ConfigureOptions<ConfigureSwaggerGenOptions>();
     }
 }
