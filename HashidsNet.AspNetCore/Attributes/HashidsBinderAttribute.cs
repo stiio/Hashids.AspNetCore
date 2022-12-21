@@ -1,13 +1,7 @@
-﻿using HashidsNet.AspNetCore.Binder;
-using HashidsNet.AspNetCore.Interfaces;
-using Microsoft.AspNetCore.Mvc;
+﻿using HashidsNet.AspNetCore.Interfaces;
 
 namespace HashidsNet.AspNetCore.Attributes;
 
-public class HashidsBinderAttribute : ModelBinderAttribute, IHashidsProperty
+public class HashidsBinderAttribute : Attribute, IHashidsProperty
 {
-    public HashidsBinderAttribute()
-        : base(typeof(HashidsModelBinder))
-    {
-    }
 }

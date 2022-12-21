@@ -37,10 +37,16 @@ public class SampleController : ControllerBase
         return this.Ok(id);
     }
 
-    [HttpPost]
+    [HttpPost("decode/form")]
     public IActionResult DecodeFromForm([FromForm, HashidsBinder] long id)
     {
         return this.Ok(id);
+    }
+
+    [HttpPost("decode/form_model")]
+    public IActionResult DecodeFromFormModel([FromForm] SampleFormModel request)
+    {
+        return this.Ok(request.Id);
     }
 
     [HttpPost("model")]

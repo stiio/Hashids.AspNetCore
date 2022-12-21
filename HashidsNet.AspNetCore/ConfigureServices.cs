@@ -16,5 +16,6 @@ public static class ConfigureServices
 
         services.ConfigureOptions<ConfigureSystemTextJsonOptions>();
         services.ConfigureOptions<ConfigureSwaggerGenOptions>();
+        services.ConfigureOptions<ConfigureMvcOptions>();
     }
 }
