@@ -11,12 +11,10 @@ namespace Sample.Controllers;
 public class SampleController : ControllerBase
 {
     private readonly IHashids hashids;
-    private readonly MvcOptions mvcOptions;
 
-    public SampleController(IHashids hashids, IOptions<MvcOptions> mvcOptions)
+    public SampleController(IHashids hashids)
     {
         this.hashids = hashids;
-        this.mvcOptions = mvcOptions.Value;
     }
 
     [HttpGet("encode")]
