@@ -33,12 +33,11 @@ internal class HashidsModelBinder : IModelBinder
         {
             return Task.CompletedTask;
         }
-        
+
         if (bindingContext.ModelType == typeof(int))
         {
             var result = this.hashids.DecodeSingle(value);
             bindingContext.Result = ModelBindingResult.Success(result);
-
         }
         else if (bindingContext.ModelType == typeof(long))
         {

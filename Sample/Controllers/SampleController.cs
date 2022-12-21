@@ -26,19 +26,25 @@ public class SampleController : ControllerBase
     }
 
     [HttpGet("decode/{id}")]
-    public IActionResult Decode2([Hashids] long id)
+    public IActionResult DecodeFromRoute([HashidsBinder] long id)
     {
         return this.Ok(id);
     }
 
     [HttpGet("decode")]
-    public IActionResult Decode([Hashids] long id)
+    public IActionResult DecodeFromQuery([HashidsBinder] long id)
+    {
+        return this.Ok(id);
+    }
+
+    [HttpPost]
+    public IActionResult DecodeFromForm([FromForm, HashidsBinder] long id)
     {
         return this.Ok(id);
     }
 
     [HttpPost("model")]
-    public IActionResult DecodeModel(SampleModel request)
+    public IActionResult DecodeFromBody(SampleModel request)
     {
         return this.Ok(request);
     }

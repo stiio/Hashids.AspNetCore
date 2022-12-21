@@ -12,10 +12,7 @@ public class HashidsNullableLongJsonConverter : JsonConverter<long?>
         this.hashids = hashids;
     }
 
-    public override bool CanConvert(Type typeToConvert)
-    {
-        return base.CanConvert(typeToConvert);
-    }
+    public override bool CanConvert(Type typeToConvert) => false;
 
     public override long? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
