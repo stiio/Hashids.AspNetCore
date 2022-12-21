@@ -1,5 +1,5 @@
 ﻿namespace HashidsNet.AspNetCore.Interfaces;
 
-public interface IHashidsProperty
+internal interface IHashidsProperty
 {
 }

@@ -4,9 +4,9 @@ using HashidsNet.AspNetCore.Extensions;
 
 namespace HashidsNet.AspNetCore.Json.SystemText;
 
-internal class HashidsLongJsonConverter : JsonConverter<long>
+internal class HashidsIntJsonConverter : JsonConverter<int>
 {
-    public override long Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override int Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType != JsonTokenType.String)
         {
@@ -17,7 +17,7 @@ internal class HashidsLongJsonConverter : JsonConverter<long>
 
         try
         {
-            var value = options.GetHashids().DecodeSingleLong(stringValue);
+            var value = options.GetHashids().DecodeSingle(stringValue);
 
             return value;
         }
@@ -27,8 +27,8 @@ internal class HashidsLongJsonConverter : JsonConverter<long>
         }
     }
 
-    public override void Write(Utf8JsonWriter writer, long value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, int value, JsonSerializerOptions options)
     {
-        writer.WriteStringValue(options.GetHashids().EncodeLong(value));
+        writer.WriteStringValue(options.GetHashids().Encode(value));
     }
 }

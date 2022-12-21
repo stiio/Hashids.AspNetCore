@@ -20,7 +20,6 @@ internal class HashidsModelBinder : IModelBinder
 
         var modelName = bindingContext.ModelName;
         var valueProviderResult = bindingContext.ValueProvider.GetValue(modelName);
-
         if (valueProviderResult == ValueProviderResult.None)
         {
             return Task.CompletedTask;

@@ -22,9 +22,9 @@
     <Folder Include="Binder\" />
     <Folder Include="Json\SystemText\" />
     <Folder Include="Options\" />
-    <Folder Include="Attributes\" />
     <Folder Include="Swashbuckle\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 
 namespace HashidsNet.AspNetCore.Options;
 
-public class ConfigureSystemTextJsonOptions : IConfigureOptions<JsonOptions>
+internal class ConfigureSystemTextJsonOptions : IConfigureOptions<JsonOptions>
 {
     private readonly IHashids hashids;
 
@@ -15,7 +15,6 @@ public class ConfigureSystemTextJsonOptions : IConfigureOptions<JsonOptions>
 
     public void Configure(JsonOptions options)
     {
-        options.JsonSerializerOptions.Converters.Add(new HashidsLongJsonConverter(this.hashids));
-        options.JsonSerializerOptions.Converters.Add(new HashidsNullableLongJsonConverter(this.hashids));
+        options.JsonSerializerOptions.Converters.Add(new HashidsInjectionJsonProvider(this.hashids));
     }
 }

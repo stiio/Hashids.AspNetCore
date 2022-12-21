@@ -7,7 +7,7 @@ namespace HashidsNet.AspNetCore.Attributes;
 public class HashidsBinderAttribute : ModelBinderAttribute, IHashidsProperty
 {
     public HashidsBinderAttribute()
+        : base(typeof(HashidsModelBinder))
     {
-        this.BinderType = typeof(HashidsModelBinder);
     }
 }

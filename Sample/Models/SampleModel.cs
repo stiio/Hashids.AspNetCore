@@ -4,9 +4,19 @@ namespace Sample.Models;
 
 public class SampleModel
 {
-    public long HashidLong { get; set; }
+    [HashidsLongJsonConverter]
+    public long HashidsLong { get; set; }
 
-    public long? NullableHashidLong { get; set; }
+    [HashidsNullableLongJsonConverter]
+    public long? NullableHashidsLong { get; set; }
 
     public long NonHashidsLong { get; set; }
+
+    [HashidsIntJsonConverter]
+    public int HashidsInt { get; set; }
+
+    [HashidsNullableIntJsonConverter]
+    public int? HashidsNullableInt { get; set; }
+
+    public int NonHashidsInt { get; set; }
 }
