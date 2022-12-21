@@ -1,0 +1,34 @@
+name: deploy-package
+
+on:
+  push:
+    branches: [ release ]
+
+jobs:
+  deploy-package:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
+
+    - name: Restore dependencies
+      working-directory: ./HashidsNet.AspNetCore
+      run: dotnet restore
+
+    - name: Build
+      working-directory: ./HashidsNet.AspNetCore
+      run: dotnet build --no-restore -c Release
+
+    - name: Pack
+      if: ${{ success() && !github.base_ref }}
+      working-directory: ./HashidsNet.AspNetCore
+      run: |
+        dotnet pack --no-build --verbosity normal -c Release -o artifacts
+
+    - name: Push to NuGet
+      if: ${{ success() && !github.base_ref }}
+      working-directory: ./HashidsNet.AspNetCore
+      run: dotnet nuget push artifacts/**.nupkg -s https://api.nuget.org/v3/index.json --api-key ${{secrets.NUGET_API_KEY}} --skip-duplicate
