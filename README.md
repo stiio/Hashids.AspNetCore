@@ -20,9 +20,7 @@ builder.Services.AddHashids("this is my salt");
 3. Decorate hash properties:  
 In your DTOs, decorate the properties that you want to be hash with one of the:
 - HashidsIntJsonConverterAttribute
-- HashidsNullableIntJsonConverterAttribute
 - HashidsLongJsonConverterAttribute
-- HashidsNullableLongJsonConverterAttribute
 
 ```csharp
 public class SampleModel
@@ -30,7 +28,7 @@ public class SampleModel
     [HashidsLongJsonConverter]
     public long HashidsLong { get; set; }
 
-    [HashidsNullableLongJsonConverter]
+    [HashidsLongJsonConverter]
     public long? NullableHashidsLong { get; set; }
 
     public long NonHashidsLong { get; set; }
@@ -38,7 +36,7 @@ public class SampleModel
     [HashidsIntJsonConverter]
     public int HashidsInt { get; set; }
 
-    [HashidsNullableIntJsonConverter]
+    [HashidsIntJsonConverter]
     public int? HashidsNullableInt { get; set; }
 
     public int NonHashidsInt { get; set; }
