@@ -1,3 +1,5 @@
+[![https://www.nuget.org/packages/Stio.HashidsNet.AspNetCore](https://img.shields.io/nuget/v/Stio.HashidsNet.AspNetCore)](https://www.nuget.org/packages/Stio.HashidsNet.AspNetCore/)
+
 # Hashids.AspNetCore
 Extension library for [hashids.net](https://github.com/ullmark/hashids.net).  
 Auto decode and encode hash ids for your api.
@@ -21,6 +23,8 @@ builder.Services.AddHashids("this is my salt");
 In your DTOs, decorate the properties that you want to be hash with one of the:
 - HashidsIntJsonConverterAttribute
 - HashidsLongJsonConverterAttribute
+- HashidsNullableLongJsonConverterAttribute
+> Only for System.Text.Json
 
 ```csharp
 public class SampleModel
@@ -51,7 +55,6 @@ public ActionResult<SampleModel> DecodeFromBody(SampleModel request)
     return this.Ok(request);
 }
 ```
-
 For hash the parameters of a route, query, or form-data, use the `HashidsBinderAttribute`
 ```csharp
  [HttpGet("decode/{id}")]
