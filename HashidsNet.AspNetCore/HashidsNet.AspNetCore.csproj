@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
 	<PackageId>Stio.$(AssemblyName)</PackageId>
 	<Title>Stio.$(AssemblyName)</Title>
-	<Version>1.6.1</Version>
+	<Version>2.0.0</Version>
 	<Authors>Stio</Authors>
 	<Description>Generate YouTube-like hashes from one or many numbers. Use hashids when you do not want to expose your database ids to the user.</Description>
 	<PackageProjectUrl>https://github.com/stiio/Hashids.AspNetCore</PackageProjectUrl>
