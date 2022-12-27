@@ -23,7 +23,6 @@ builder.Services.AddHashids("this is my salt");
 In your DTOs, decorate the properties that you want to be hash with one of the:
 - HashidsIntJsonConverterAttribute
 - HashidsLongJsonConverterAttribute
-- HashidsNullableLongJsonConverterAttribute
 > Only for System.Text.Json
 
 ```csharp
