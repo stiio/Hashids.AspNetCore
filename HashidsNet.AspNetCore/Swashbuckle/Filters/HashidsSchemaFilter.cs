@@ -10,6 +10,13 @@ internal class HashidsSchemaFilter : ISchemaFilter
     {
         if (IsHashids(context))
         {
+            if (schema.Type == "array" && schema.Items != null)
+            {
+                schema.Items.Type = "string";
+                schema.Items.Format = null;
+                return;
+            }
+
             schema.Type = "string";
             schema.Format = null;
         }

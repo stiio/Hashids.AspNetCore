@@ -4,6 +4,8 @@
 Extension library for [hashids.net](https://github.com/ullmark/hashids.net).  
 Auto decode and encode hash ids for your api.
 
+## [Release notes](/CHANGELOG.md)
+
 ## Getting started
 1. Install package:  
 
@@ -28,21 +30,41 @@ In your DTOs, decorate the properties that you want to be hash with one of the:
 ```csharp
 public class SampleModel
 {
-    [HashidsLongJsonConverter]
+    [HashidsJsonConverter]
     public long HashidsLong { get; set; }
 
-    [HashidsLongJsonConverter]
+    [HashidsJsonConverter]
     public long? NullableHashidsLong { get; set; }
 
     public long NonHashidsLong { get; set; }
 
-    [HashidsIntJsonConverter]
+    [HashidsJsonConverter]
     public int HashidsInt { get; set; }
 
-    [HashidsIntJsonConverter]
+    [HashidsJsonConverter]
     public int? HashidsNullableInt { get; set; }
 
     public int NonHashidsInt { get; set; }
+
+    [HashidsJsonConverter]
+    public long[] HashidsLongArray { get; set; } = null!;
+
+    [HashidsJsonConverter]
+    public long?[] HashidsNullableLongArray { get; set; } = null!;
+
+    [HashidsJsonConverter]
+    public long?[]? HashidsNullableLongNullableArray { get; set; } = null!;
+
+    public long[] NonHashidsLongArray { get; set; } = null!;
+
+    [HashidsJsonConverter]
+    public List<long> HashidsLongList { get; set; } = null!;
+
+    [HashidsJsonConverter]
+    public ICollection<long> HashidsLongCollection { get; set; } = null!;
+
+    [HashidsJsonConverter]
+    public ISet<long> HashidsLongSet { get; set; } = null!;
 }
 ```
 
