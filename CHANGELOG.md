@@ -1,4 +1,4 @@
-## 2.1.0
+## 3.0.0
 
 ### Added
 - HashidsJsonConverter can be apply to enumerable

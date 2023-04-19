@@ -4,6 +4,8 @@
 Extension library for [hashids.net](https://github.com/ullmark/hashids.net).  
 Auto decode and encode hash ids for your api.
 
+## [Release notes](/CHANGELOG.md)
+
 ## Getting started
 1. Install package:  
 
