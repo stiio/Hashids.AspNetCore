@@ -1,4 +1,5 @@
 ﻿using HashidsNet.AspNetCore.Swashbuckle.Filters;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
@@ -8,6 +9,6 @@ internal class ConfigureSwaggerGenOptions : IConfigureOptions<SwaggerGenOptions>
 {
     public void Configure(SwaggerGenOptions options)
     {
-        options.SchemaGeneratorOptions.SchemaFilters.Add(new HashidsSchemaFilter());
+        options.SchemaFilter<HashidsSchemaFilter>();
     }
 }

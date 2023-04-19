@@ -1,7 +1,6 @@
 ﻿using HashidsNet;
 using HashidsNet.AspNetCore.Attributes;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using Sample.Models;
 
 namespace Sample.Controllers;
