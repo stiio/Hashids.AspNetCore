@@ -74,7 +74,7 @@ public ActionResult<SampleModel> DecodeFromBody(SampleModel request)
     return this.Ok(request);
 }
 ```
-For hash the parameters of a route, query, or form-data, use the `HashidsBinderAttribute`
+For hash the parameters of a route, query or form-data use the `HashidsBinderAttribute`
 ```csharp
  [HttpGet("decode/{id}")]
  public IActionResult DecodeFromRoute([HashidsBinder] long id)
