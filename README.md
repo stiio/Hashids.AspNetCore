@@ -22,9 +22,7 @@ dotnet add package Stio.Hashids.AspNetCore
 builder.Services.AddHashids("this is my salt");
 ```
 3. Decorate hash properties:  
-In your DTOs, decorate the properties that you want to be hash with one of the:
-- HashidsIntJsonConverterAttribute
-- HashidsLongJsonConverterAttribute
+In your DTOs, decorate the properties that you want to be hash with HashidsJsonConverterAttribute  
 > Only for System.Text.Json
 
 ```csharp
