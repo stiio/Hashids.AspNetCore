@@ -50,6 +50,7 @@ dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:sil
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary:silent
 dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:silent
 dotnet_style_require_accessibility_modifiers = for_non_interface_members:silent
+dotnet_style_prefer_collection_expression = when_types_loosely_match:suggestion
 [*.cs]
 #### Стили именования ####
 
@@ -140,7 +141,7 @@ dotnet_diagnostic.SA1623.severity = none
 dotnet_diagnostic.SA1601.severity = silent
 dotnet_diagnostic.SA1633.severity = silent
 dotnet_diagnostic.SA1614.severity = silent
-dotnet_diagnostic.SA0001.severity = silent
+dotnet_diagnostic.SA0001.severity = none
 
 [*.vb]
 #### Стили именования ####

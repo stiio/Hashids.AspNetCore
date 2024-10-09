@@ -1,3 +1,7 @@
+## 4.0.0
+- Upgrage to net8
+- Update packages
+
 ## 3.0.0
 
 ### Added

@@ -22,9 +22,7 @@ dotnet add package Stio.Hashids.AspNetCore
 builder.Services.AddHashids("this is my salt");
 ```
 3. Decorate hash properties:  
-In your DTOs, decorate the properties that you want to be hash with one of the:
-- HashidsIntJsonConverterAttribute
-- HashidsLongJsonConverterAttribute
+In your DTOs, decorate the properties that you want to be hash with HashidsJsonConverterAttribute  
 > Only for System.Text.Json
 
 ```csharp
@@ -76,7 +74,7 @@ public ActionResult<SampleModel> DecodeFromBody(SampleModel request)
     return this.Ok(request);
 }
 ```
-For hash the parameters of a route, query, or form-data, use the `HashidsBinderAttribute`
+For hash the parameters of a route, query or form-data use the `HashidsBinderAttribute`
 ```csharp
  [HttpGet("decode/{id}")]
  public IActionResult DecodeFromRoute([HashidsBinder] long id)
